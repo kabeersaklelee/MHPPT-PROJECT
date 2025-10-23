@@ -1,0 +1,1339 @@
+/* --- Slide 2: Why MH Matters --- */
+
+/* Slide title styling with same glowy effect as main title */
+.reveal .slides .slide-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 800;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FFD700;
+    margin-bottom: 0 !important;
+    white-space: nowrap;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+/* Decorative line for slide 2 */
+.slide-title + .decorative-line {
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    height: 2px;
+    width: 60%;
+    margin: 5px auto 40px auto;
+    opacity: 0.8;
+}
+
+/* This is the main 2-column layout for the slide */
+.layout-two-column {
+    display: flex;
+    flex-direction: row; /* Desktop is side-by-side */
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+/* This is the left column (for text) */
+.col-text {
+    flex: 1.2; /* Makes text column slightly larger */
+}
+
+/* This is the right column (for media) */
+.col-media {
+    flex: 1; /* Makes media column slightly smaller */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between the two media items */
+}
+
+/* This styles the text blocks inside the text column */
+.text-box {
+    background-color: rgba(26, 26, 26, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* The "frosted glass" effect */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #444; /* Slightly lighter border */
+
+    /* The hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.text-box:hover {
+    transform: scale(1.03); /* AI's 'scale-105' is a bit much */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.text-box h3 {
+    color: #FFD700; /* Gold color for subheadings */
+    font-size: 0.8em; /* Controls heading size */
+}
+.text-box h3 i {
+    margin-right: 10px; /* Adds space between icon and text */
+    opacity: 0.8;
+}
+.text-box p {
+    font-size: 0.6em; /* Controls paragraph size */
+    opacity: 0.8;
+}
+.text-box:last-child {
+    margin-top: 30px;
+}
+
+/* This creates a simple gray box as a placeholder */
+.media-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Creates a responsive 16:9 box */
+    background-color: #222;
+    border: 1px dashed #555;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    font-size: 0.8em;
+}
+
+/* --- RESPONSIVE STYLES --- */
+/* This stacks the columns on mobile screens */
+@media (max-width: 768px) {
+    .layout-two-column {
+        flex-direction: column; /* Stacks columns vertically */
+    }
+    
+    .col-text {
+        text-align: center; /* Center-align text on mobile */
+    }
+}
+
+/* --- Slide 2: AI 3-Column Redesign --- */
+
+.layout-ai-3col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+/* Style for the text columns (1 and 3) */
+.col-3-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.52em;
+    opacity: 0.95;
+    line-height: 1.5;
+    background-color: rgba(26, 26, 26, 0.6);
+    backdrop-filter: blur(5px);
+    padding: 18px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Lato', sans-serif;
+    text-align: justify;
+}
+
+.col-3-text:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.col-3-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.col-3-header h3 {
+    font-size: 1.4em;
+    color: #FFD700;
+    margin: 0;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+}
+
+.col-3-header .material-symbols-outlined {
+    font-size: 1.8em;
+    color: #FFD700;
+    flex-shrink: 0;
+}
+
+.col-3-text p {
+    margin: 0;
+    font-size: 0.95em;
+    opacity: 0.85;
+}
+
+/* Card content structure */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-main {
+    margin: 0;
+    font-size: 0.95em;
+    opacity: 0.95;
+    font-weight: 500;
+    line-height: 1.6;
+    font-family: 'Lato', sans-serif;
+}
+
+.card-main strong {
+    color: #FFD700;
+    font-weight: 700;
+}
+
+.card-detail {
+    margin: 0;
+    font-size: 0.88em;
+    opacity: 0.8;
+    line-height: 1.5;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Style for the image column - full width below */
+.col-3-image-full {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    overflow: hidden;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gdp-chart {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.gdp-legend {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    font-size: 0.75em;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ccc;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+}
+
+.legend-color.mh-color {
+    background-color: #FFD700;
+}
+
+.legend-color.other-color {
+    background-color: #555;
+}
+
+/* --- RESPONSIVE for 3-Column Layout --- */
+@media (max-width: 768px) {
+    .layout-ai-3col {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .col-3-text {
+        text-align: center;
+        font-size: 0.5em;
+        padding: 12px;
+    }
+
+    .col-3-header {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .col-3-image-full {
+        grid-column: 1;
+        height: 220px;
+    }
+
+    .slide-image {
+        max-height: 220px;
+    }
+}
+
+/* --- Slide 2: Introduction (Split Layout) --- */
+
+.layout-intro-split {
+    display: flex;
+    flex-direction: row; /* Side-by-side on desktop */
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.col-intro-text {
+    flex: 1.5; /* Give text more space */
+    font-size: 0.8em; /* Control base font size */
+    text-align: left;
+    padding-right: 20px;
+}
+
+.col-intro-text p {
+    font-family: 'Lato', sans-serif;
+    opacity: 0.9;
+    line-height: 1.8;
+    margin-bottom: 18px;
+    color: #e0e0e0;
+    font-weight: 500;
+    word-spacing: 0.05em;
+}
+
+.col-intro-text strong {
+    color: #FFD700;
+    font-weight: 700;
+}
+
+.intro-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    gap: 20px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 1.4em;
+    color: #FFD700;
+    font-weight: 800;
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 0.65em;
+    color: #999;
+    font-family: 'Lato', sans-serif;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.col-intro-image {
+    flex: 1; /* Give image less space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- RESPONSIVE for Intro Split --- */
+@media (max-width: 768px) {
+    .layout-intro-split {
+        flex-direction: column-reverse; /* Stack text *below* image */
+        gap: 20px;
+    }
+    
+    .col-intro-text {
+        font-size: 0.6em;
+        text-align: center;
+    }
+    
+    .col-intro-text .slide-title {
+        text-align: center;
+        font-size: 2em;
+    }
+    
+    .col-intro-image .media-placeholder {
+        height: 40vh !important; /* Shorter placeholder on mobile */
+    }
+}
+
+/* Enhanced responsiveness for small tablets */
+@media (max-width: 1024px) {
+    .layout-intro-split {
+        gap: 30px;
+    }
+    
+    .col-intro-text {
+        font-size: 0.75em;
+    }
+    
+    .col-intro-text p {
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+}
+
+/* --- Slide 3: Full-Width List Layout --- */
+
+.layout-full-list {
+    width: 100%;
+    max-width: 65%; /* Constrains list width for readability */
+    margin: 0 auto; /* Centers the list block */
+}
+
+.layout-full-list ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+.layout-full-list li {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9em; /* Larger, readable font */
+    font-weight: 500;
+    color: #e0e0e0;
+    opacity: 0.95;
+    line-height: 1.8; /* More spacing */
+    margin-bottom: 18px; /* Space between items */
+    padding-left: 35px; /* Make space for a custom icon */
+    position: relative; /* For icon positioning */
+}
+
+.layout-full-list li strong {
+    color: #FFD700;
+    font-weight: 700;
+}
+
+/* Custom "bullet" icon */
+.layout-full-list li::before {
+    content: '\f00c'; /* Font Awesome check icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900; /* Solid icon */
+    color: #FFD700;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    font-size: 0.9em;
+}
+
+/* --- Slide 3: Compact List for Split Layout --- */
+
+.col-list-text {
+    flex: 1.2 !important;
+}
+
+.col-list-text .slide-title {
+    margin-bottom: 15px !important;
+}
+
+.layout-list-compact {
+    width: 100%;
+}
+
+.layout-list-compact ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.layout-list-compact li {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.88em;
+    font-weight: 400;
+    color: #e0e0e0;
+    opacity: 1;
+    line-height: 1.85;
+    margin-bottom: 20px;
+    padding-left: 28px;
+    position: relative;
+    letter-spacing: 0.3px;
+}
+
+.layout-list-compact li strong {
+    color: #FFD700;
+    font-weight: 700;
+}
+
+.layout-list-compact li::before {
+    content: '✓';
+    color: #FFD700;
+    position: absolute;
+    left: 0;
+    font-weight: 800;
+    font-size: 0.9em;
+}
+
+/* --- Slide 4: Warrior King (60/40 Split) --- */
+
+.layout-shivaji-split {
+    display: flex;
+    flex-direction: row; /* Side-by-side on desktop */
+    align-items: center;
+    justify-content: center;
+    gap: 50px; /* This fixes the "at the edge" problem */
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+/* Column 1: Text */
+.col-shivaji-text {
+    flex: 1.5; /* Gives text 60% of the space */
+    font-size: 0.8em;
+    text-align: left;
+}
+
+.col-shivaji-text p {
+    font-family: 'Lato', sans-serif;
+    opacity: 0.9;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+.col-shivaji-text strong {
+    color: #FFD700;
+    font-weight: 700;
+}
+
+/* Column 2: Images */
+.col-shivaji-images {
+    flex: 1; /* Gives images 40% of the space */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between the two images */
+}
+
+.col-shivaji-images img {
+    width: 100%;
+    height: 40vh; /* This fixes the image size */
+    aspect-ratio: 4/3; /* Ensures consistent shape */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* --- RESPONSIVE for Slide 4 --- */
+@media (max-width: 768px) {
+    .layout-shivaji-split {
+        flex-direction: column-reverse; /* Stack text below images */
+    }
+    
+    .col-shivaji-text {
+        font-size: 0.7em;
+        text-align: center;
+    }
+
+    .col-shivaji-text .slide-title {
+        text-align: center;
+    }
+    
+    .shivaji-quote {
+        text-align: left;
+    }
+
+    .col-shivaji-images {
+        flex-direction: row; /* Show images side-by-side on mobile */
+        width: 100%;
+    }
+    .col-shivaji-images img {
+        height: 25vh; /* Make them shorter on mobile */
+    }
+}
+
+/* --- RESPONSIVE for Full List --- */
+@media (max-width: 768px) {
+    .layout-full-list {
+        max-width: 90%;
+    }
+    .layout-full-list li {
+        font-size: 0.8em;
+    }
+}
+
+/* --- Slide 5: Transformation Timeline --- */
+
+/* This is the main container for the 4 cards */
+.layout-timeline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 95%;
+    margin: 40px auto 0 auto;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* This styles each of the 4 timeline "stops" */
+.timeline-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 22%;
+    position: relative;
+    z-index: 1;
+    padding: 25px 12px;
+    background: rgba(26, 26, 26, 0.25);
+    backdrop-filter: blur(0.1px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    transition: all 0.3s ease;
+    min-height: 320px;
+    gap: 12px;
+}
+
+.timeline-card:hover {
+    background: rgba(26, 26, 26, 0.7);
+    border-color: rgba(255, 215, 0, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.15);
+}
+
+/* This styles the round icon on each card */
+.timeline-card .material-symbols-outlined {
+    font-size: 2.8em;
+    color: #FFD700;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.1));
+    border-radius: 50%;
+    padding: 14px;
+    border: 3px solid #FFD700;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    flex-shrink: 0;
+}
+
+.timeline-card:hover .material-symbols-outlined {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+}
+
+.timeline-card h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95em;
+    font-weight: 700;
+    color: #FFD700;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+
+.timeline-card p {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75em;
+    color: #e0e0e0;
+    opacity: 1;
+    line-height: 1.85;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* --- RESPONSIVE for Timeline --- */
+@media (max-width: 768px) {
+    .layout-timeline {
+        flex-direction: column; /* Stack cards vertically */
+        gap: 30px; /* Add space between them */
+    }
+
+    /* Hide the horizontal line on mobile */
+    .layout-timeline::before {
+        display: none;
+    }
+
+    .timeline-card {
+        width: 100%; /* Make each card full-width */
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/* --- Slide 6: Culture (3-Column Grid) --- */
+
+.layout-culture-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.culture-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(26, 26, 26, 0.4);
+    border: 1px solid #444;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.culture-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
+    border-color: #FFD700;
+}
+
+.culture-card img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.culture-card h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1em;
+    color: #FFD700;
+    margin: 20px 20px 10px 20px;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.culture-card p {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.7em;
+    line-height: 1.7;
+    opacity: 0.9;
+    margin: 0 20px 20px 20px;
+    text-align: center;
+}
+
+/* --- RESPONSIVE for Culture Grid --- */
+@media (max-width: 768px) {
+    .layout-culture-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 80%;
+    }
+
+    .culture-card img {
+        height: 20vh;
+    }
+}
+
+/* --- Slide 6: Culture Intro Text --- */
+
+.culture-intro-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.60em;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #e0e0e0;
+    opacity: 0.85;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto 35px auto;
+    padding: 0;
+}
+
+/* Responsive for the new text */
+@media (max-width: 768px) {
+    .culture-intro-text {
+        font-size: 0.55em;
+        margin-bottom: 25px;
+    }
+}
+
+/* --- Slide 7: Transition Slide --- */
+
+.transition-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.transition-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #e0e0e0;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.transition-handoff {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.0em;
+    font-weight: 700;
+    color: #FFD700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    margin-top: 20px;
+    line-height: 1.4;
+}
+
+/* --- RESPONSIVE for Transition --- */
+@media (max-width: 768px) {
+    .transition-text {
+        font-size: 0.8em;
+    }
+    .transition-handoff {
+        font-size: 1.5em;
+    }
+}
+
+/* --- Slide 8: Tech Intro Grid --- */
+
+/* Adjust grid spacing slightly */
+.tech-intro-grid {
+    gap: 35px;
+}
+
+/* Override card style to remove image space */
+.tech-card {
+    background: rgba(26, 26, 26, 0.4);
+    backdrop-filter: blur(2px);
+    padding: 25px;
+}
+
+/* Style for the large icon container */
+.tech-card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.1));
+    border-radius: 50%;
+    border: 3px solid #FFD700;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.tech-card-icon .material-symbols-outlined {
+    font-size: 2.8em;
+    color: #FFD700;
+}
+
+/* Ensure card h4 and p styles are consistent */
+.tech-card h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1em;
+    color: #FFD700;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.tech-card p {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.7em;
+    line-height: 1.7;
+    opacity: 0.9;
+    margin: 0;
+    text-align: center;
+}
+
+.tech-card strong {
+    font-weight: 700;
+    color: #FFD700;
+}
+
+/* --- RESPONSIVE for Tech Intro Grid --- */
+@media (max-width: 768px) {
+    .tech-intro-grid {
+        max-width: 85%;
+    }
+    
+    .tech-card-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .tech-card-icon .material-symbols-outlined {
+        font-size: 2em;
+    }
+}
+
+/* --- Slide 10: Software (Zig-Zag Layout) --- */
+
+.layout-zigzag {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.zigzag-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+.zigzag-image {
+    flex: 1;
+}
+
+.zigzag-image img {
+    width: 100%;
+    height: 32vh;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.layout-zigzag .zigzag-row:first-child .zigzag-image img {
+    height: 21vh;
+}
+
+.zigzag-text {
+    flex: 1;
+    text-align: left;
+}
+
+.zigzag-text h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3em;
+    color: #FFD700;
+    margin: 0 0 10px 0;
+}
+
+.zigzag-text p {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75em;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.zigzag-text strong {
+    font-weight: 700;
+    color: #FFD700;
+}
+
+/* --- RESPONSIVE for Zig-Zag --- */
+@media (max-width: 768px) {
+    .layout-zigzag {
+        max-width: 90%;
+        gap: 20px;
+    }
+
+    .zigzag-row,
+    .zigzag-row.reverse {
+        flex-direction: column;
+        text-align: center !important;
+    }
+    
+    .zigzag-image img {
+        height: 20vh;
+    }
+}
+
+/* --- Slide 11: Smart City (60/40 Split) --- */
+
+.layout-smart-split {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.col-smart-text {
+    flex: 1.5;
+}
+
+.col-smart-text .layout-list-compact {
+    font-size: 0.85em;
+}
+
+.col-smart-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.col-smart-images img {
+    width: 100%;
+    height: 38vh;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.col-smart-images img:last-child {
+    height: 55vh;
+}
+
+/* --- RESPONSIVE for Smart Split --- */
+@media (max-width: 768px) {
+    .layout-smart-split {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .col-smart-images {
+        flex-direction: row;
+        width: 100%;
+    }
+    .col-smart-images img {
+        height: 20vh !important;
+    }
+    
+    .vision-tagline {
+        font-size: 1.2em !important;
+    }
+}
+
+/* --- Slide 11: Smart City List (No Ticks) --- */
+
+.layout-list-smart {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    font-size: 0.82em;
+    font-family: 'Lato', sans-serif;
+}
+
+.layout-list-smart li {
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    position: relative;
+    background: rgba(26, 26, 26, 0.5);
+    backdrop-filter: blur(3px);
+    border-radius: 8px;
+    border-left: 3px solid #FFD700;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.layout-list-smart li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.15);
+}
+
+.layout-list-smart li::before {
+    content: none;
+}
+
+.layout-list-smart p {
+    margin: 0;
+    line-height: 1.7;
+    opacity: 0.9;
+    color: #e0e0e0;
+}
+
+.layout-list-smart strong {
+    font-weight: 700;
+}
+
+.layout-list-smart li > strong {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1em;
+    color: #FFD700;
+    letter-spacing: 0.5px;
+}
+
+.layout-list-smart p strong {
+    color: #FFD700;
+    display: inline;
+}
+
+/* --- RESPONSIVE for Smart List --- */
+@media (max-width: 768px) {
+    .layout-list-smart {
+        font-size: 0.75em;
+    }
+    .layout-list-smart li {
+        margin-bottom: 15px;
+        padding: 12px 15px;
+    }
+    .layout-list-smart p {
+        line-height: 1.5;
+    }
+}
+
+/* --- Enhanced Smart Images --- */
+.col-smart-images img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.col-smart-images img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(255, 215, 0, 0.3);
+}
+
+/* Enhanced responsive for Spirit slide */
+@media (max-width: 1024px) {
+    .layout-smart-split {
+        gap: 30px;
+    }
+    
+    .col-smart-images img {
+        height: 25vh !important;
+    }
+}
+
+/* --- Slide 8: Tech Engine (Impact Stats Layout) --- */
+
+.layout-impact-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    width: 100%;
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.stat-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px 20px;
+    background: rgba(18, 18, 18, 0.5);
+    border: 1px solid #555;
+    border-radius: 12px;
+    backdrop-filter: blur(3px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.15);
+    border-color: #777;
+}
+
+.stat-block-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.5em;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #FFD700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    margin-bottom: 5px;
+}
+
+.stat-block-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.stat-block-label .material-symbols-outlined {
+    font-size: 1.5em;
+    color: #FFD700;
+    opacity: 0.8;
+}
+
+.stat-block-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75em;
+    line-height: 1.7;
+    color: #e0e0e0;
+    opacity: 0.85;
+    margin: 0;
+}
+
+/* --- RESPONSIVE for Impact Stats --- */
+@media (max-width: 768px) {
+    .layout-impact-stats {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 75%;
+    }
+
+    .stat-block-number {
+        font-size: 3.5em;
+    }
+}
+
+/* --- Slide 12: Future Vision Showcase --- */
+
+.vision-central-image {
+    width: 100%;
+    max-width: 45%;
+    margin: 0 auto 30px auto;
+}
+
+.vision-central-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 215, 0, 0.4);
+}
+
+.layout-vision-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.vision-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 15px;
+    background: linear-gradient(145deg, rgba(22, 22, 22, 0.7), rgba(35, 35, 35, 0.7));
+    border: 1px solid #444;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vision-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1);
+    border-color: #666;
+}
+
+.vision-card .material-symbols-outlined {
+    font-size: 2.5em;
+    color: #FFD700;
+    margin-bottom: 12px;
+}
+
+.vision-card h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.0em;
+    color: #FFD700;
+    margin: 0 0 8px 0;
+}
+
+.vision-card p {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.7em;
+    line-height: 1.7;
+    opacity: 0.85;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.vision-tagline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #FFD700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    margin-top: 40px;
+    opacity: 0.9;
+}
+
+/* --- RESPONSIVE for Vision Showcase --- */
+@media (max-width: 768px) {
+    .vision-central-image {
+        max-width: 60%;
+        margin-bottom: 20px;
+    }
+    .layout-vision-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 80%;
+    }
+    .vision-tagline {
+        font-size: 1.1em;
+        margin-top: 30px;
+    }
+}
+
+/* --- Slide 13: Bollywood (Title > Image > Content) --- */
+
+.bollywood-image-container {
+    width: 100%;
+    max-width: 65%;
+    margin: 0 auto 30px auto;
+}
+
+.bollywood-image-container img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 21 / 9;
+    max-height: 25vh;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.25);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.bollywood-content-block {
+    width: 100%;
+    max-width: 65%;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(26, 26, 26, 0.4);
+    padding: 25px 30px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    backdrop-filter: blur(2px);
+}
+
+.bollywood-content-block p {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85em;
+    line-height: 1.8;
+    opacity: 0.9;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+}
+
+.bollywood-content-block p:last-child {
+    margin-bottom: 0;
+}
+
+.bollywood-content-block strong {
+    color: #FFD700;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .bollywood-image-container {
+        max-width: 90%;
+        margin-bottom: 20px;
+    }
+    .bollywood-content-block {
+        max-width: 90%;
+    }
+    .bollywood-content-block p {
+        font-size: 0.75em;
+    }
+}

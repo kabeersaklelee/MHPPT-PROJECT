@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majesty of Maharashtra</title>
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="reveal.js/dist/theme/black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link rel="stylesheet" href="custom-slides.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        .title-text {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 800;
+            font-size: 3.0em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            margin-bottom: 20px;
+            animation: glowing-pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes glowing-pulse {
+            0%, 100% {
+                text-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.3);
+                filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));
+            }
+            50% {
+                text-shadow: 0 0 25px rgba(255, 215, 0, 0.8), 0 0 35px rgba(255, 165, 0, 0.4);
+                filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.6));
+            }
+        }
+        
+        .title-text.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .author-text {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.55em;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            margin-top: 10px;
+            color: #FFD700;
+        }
+        
+        @media (max-width: 768px) {
+            .author-text {
+                font-size: 0.5em;
+            }
+        }
+        
+        .author-text.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .decorative-line {
+            background: linear-gradient(90deg, transparent, #FFD700, transparent);
+            height: 1px;
+            width: 100%;
+            margin: 15px auto;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        
+        .decorative-line.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999; /* Make sure it's on top */
+            
+            /* Centering content */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            /* Blur and dark overlay */
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            
+            color: white;
+            transition: opacity 0.5s ease; /* For a smooth fade out */
+        }
+
+        #start-button {
+            font-size: 1.5em;
+            padding: 15px 30px;
+            cursor: pointer;
+            color: white;
+            background: linear-gradient(145deg, #1a1a1a, #333);
+            border: 2px solid #FFD700;
+            border-radius: 5px;
+            box-shadow: 0px 5px 15px rgba(255, 215, 0, 0.6);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            font-weight: 700;
+            filter: none;
+            backdrop-filter: blur(0);
+        }
+
+        #start-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+    
+
+</head>
+<body>
+    <div id="preloader">
+        <button id="start-button" class="r-fit-text">START PRESENTATION</button>
+        
+        <div id="loading-status" style="display: none; flex-direction: column; align-items: center;">
+            <h3 class="author-text">PPT IS BEING LOADED, PLEASE WAIT...</h3>
+            <div id="progress-bar">0%</div>
+        </div>
+    </div>
+    <div class="reveal">
+        <div class="slides">
+            <section 
+                data-background-video="assets/maharashtra-bg.mp4" 
+                data-background-video-loop 
+                data-background-video-muted
+                data-background-opacity="0.3"
+                style="display: flex !important; flex-direction: column !important; justify-content: flex-start !important; align-items: center !important; height: 100vh !important; padding-top: 30vh !important;">
+                <h1 class="r-fit-text title-text">Majesty of Maharashtra</h1>
+                <!-- Decorative Element -->
+                <div class="decorative-line"></div>
+                <p class="author-text">by Harsh, Kabeer, Rounak, Ammar, Aditya</p>
+            </section>
+            
+            <section data-background-color="#121212">
+                <div class="layout-intro-split">
+                    <div class="col-intro-text">
+                        <h2 class="slide-title" style="text-align: left; margin-bottom: 0;">Introduction to Maharashtra</h2>
+                        <div class="decorative-line" style="margin-bottom: 30px;"></div>
+                        <p>Maharashtra is located in <strong>western India</strong> and stands as the country's <strong>economic powerhouse</strong>, contributing approximately <strong>15% to India's total GDP</strong>.</p>
+                        <p>With <strong>11+ crore people</strong> speaking diverse languages, Maharashtra beautifully <strong>connects North and South India</strong>, making it truly the <strong>heart of our nation</strong>.</p>
+                        <p>Maharashtra has a <strong>rich history</strong> and is known for its <strong>vibrant culture and traditions</strong>. The state is home to <strong>diverse communities</strong> living together in harmony.</p>
+                        <p>It is a land of <strong>great opportunities</strong> where people work hard and achieve their dreams. Maharashtra continues to <strong>lead India in progress and development</strong>.</p>
+                        
+                        <div class="intro-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">15%</span>
+                                <span class="stat-label">of India's GDP</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">11 Cr+</span>
+                                <span class="stat-label">Population</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">720 km</span>
+                                <span class="stat-label">Coastline</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-intro-image">
+                        <img src="assets/slide1-f1.jpg" alt="Maharashtra Introduction" style="aspect-ratio: 3/4; height: 70vh; border-radius: 12px; object-fit: cover; box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3);">
+                    </div>
+                </div>
+            </section>
+            
+            <section data-background-color="#121212">
+                <div class="layout-intro-split">
+                    <div class="col-intro-text col-list-text">
+                        <h2 class="slide-title" style="text-align: left; margin-bottom: 0;">Why Maharashtra Matters</h2>
+                        <div class="decorative-line" style="margin-bottom: 30px;"></div>
+                        
+                        <div class="layout-list-compact">
+                            <ul>
+                                <li>Leads the nation with <strong>15% of India's GDP</strong>, making it the country's undisputed economic powerhouse.</li>
+                                <li>Home to the financial capital, Mumbai, which runs India's economy with the <strong>RBI, BSE, and NSE</strong>.</li>
+                                <li>Attracts the <strong>most foreign investment (FDI)</strong>, making it the #1 choice for global companies.</li>
+                                <li>A leader in <strong>IT, car manufacturing, and Bollywood</strong>, setting trends for the world.</li>
+                                <li>Its major ports in Mumbai (like <strong>JNPT</strong>) and top-class transport network handle a huge share of India's trade.</li>
+                                <li>Builds India's future with <strong>modern infrastructure, new smart cities,</strong> and better urban planning.</li>
+                                <li>Shows <strong>'unity in diversity'</strong> with over 11 crore people, representing the true spirit of modern India.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="intro-stats" style="margin-top: 35px;">
+                            <div class="stat-item">
+                                <span class="stat-number">₹32+ Lakh Cr</span>
+                                <span class="stat-label">State GDP</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Fortune Companies</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">11 Cr+</span>
+                                <span class="stat-label">Population</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-intro-image">
+                        <img src="assets/slide2-f1.jpg" alt="Why Maharashtra Matters" style="aspect-ratio: 3/4; height: 85vh; border-radius: 12px; object-fit: cover; box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3);">
+                    </div>
+                </div>
+            </section>
+            
+            <section data-background-color="#121212">
+                <div class="layout-shivaji-split">
+                    <div class="col-shivaji-text">
+                        <h2 class="slide-title" style="text-align: left; margin-bottom: 0;">The Warrior King's Legacy</h2>
+                        <div class="decorative-line" style="margin-bottom: 30px; width: 100%;"></div>
+                        
+                        <h4 style="color: #FFD700; margin-top: 10px; font-size: 1.2em; font-family: 'Oswald', sans-serif;">Chhatrapati Shivaji Maharaj</h4>
+                        
+                        <p>From a young boy who captured his first fort at just 15, to becoming the <strong>founder of the Maratha Empire</strong>, Shivaji Maharaj was more than a king — he was a <strong>visionary leader</strong> who changed the course of Indian history.</p>
+                        
+                        <p>He built a <strong>strong navy</strong>, promoted <strong>fair governance</strong>, and proved that Indians could rule themselves with honour, justice, and pride.</p>
+                        
+                        <p>His belief in <strong>"Swarajya" (self-rule)</strong> became the heartbeat of Maharashtra and later inspired India's freedom struggle.</p>
+                        
+                        <p>His legacy of <strong>'Swaraj' (Self-Rule)</strong> and courage forms the very foundation of Maharashtrian pride and identity to this day.</p>
+                        
+                        <div class="intro-stats" style="margin-top: 35px;">
+                            <div class="stat-item">
+                                <span class="stat-number">1674</span>
+                                <span class="stat-label">Year Founded</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">280+</span>
+                                <span class="stat-label">Forts Built</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">1st</span>
+                                <span class="stat-label">Indian Navy</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-shivaji-images">
+                        <img src="assets/shivaji-statue.jpg" alt="Chhatrapati Shivaji Maharaj" style="width: 100%; border-radius: 12px; object-fit: cover; box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);">
+                        <img src="assets/sea-fort.jpg" alt="Maratha Sea Fort" style="width: 100%; border-radius: 12px; object-fit: cover; box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);">
+                    </div>
+                </div>
+            </section>
+            
+            <section 
+                data-background-video="assets/slide4_bg.mp4" 
+                data-background-video-loop 
+                data-background-video-muted
+                data-background-opacity="0.3">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -60px; font-size: 1.8em;">Maharashtra's Amazing Transformation</h2>
+                <div class="decorative-line" style="margin: 20px auto 40px auto; width: 60%;"></div>
+                
+                <div class="layout-timeline">
+                    <div class="timeline-card">
+                        <span class="material-symbols-outlined">account_balance</span>
+                        <h4>THE ANCIENT LAND (300 BCE)</h4>
+                        <p>From timeless wonders like the Ajanta & Ellora caves, this land was ruled by great dynasties long before modern India.</p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <span class="material-symbols-outlined">security</span>
+                        <h4>THE WARRIOR'S SPARK (1600s)</h4>
+                        <p>Shivaji Maharaj forged the Maratha Empire, sparking a new identity of 'Swaraj' (Self-Rule) and building a legacy of pride.</p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <span class="material-symbols-outlined">factory</span>
+                        <h4>THE INDUSTRIAL ENGINE (1800s)</h4>
+                        <p>The rise of Bombay as a global cotton and trade hub built the foundation for India's entire modern economy.</p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <span class="material-symbols-outlined">hub</span>
+                        <h4>THE GLOBAL POWERHOUSE (Today)</h4>
+                        <p>Now India's richest state, it's a world leader in IT, finance, and technology, defining the nation's future.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section data-background-color="#121212">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px;">The Beautiful Marathi Culture</h2>
+                <div class="decorative-line" style="margin: 20px auto 40px auto; width: 60%;"></div>
+                <p class="culture-intro-text">A rich blend of timeless traditions, vibrant festivals, and deep-rooted values.</p>
+                
+                <div class="layout-culture-grid">
+                    <div class="culture-card">
+                        <img src="assets/marathi-calligraphy.jpg" alt="Marathi Calligraphy">
+                        <h4>LANGUAGE & LITERATURE</h4>
+                        <p>Marathi is a 'Classical Language' with a 1000-year history of poetry and literature, starting from great saint-poets like Sant Dnyaneshwar.</p>
+                    </div>
+                    
+                    <div class="culture-card">
+                        <img src="assets/ganesh-festival.jpg" alt="Ganesh Festival">
+                        <h4>FESTIVALS & JOY</h4>
+                        <p>Led by the world-famous Ganesh Chaturthi, festivals like Gudi Padwa and Navratri unite millions in massive celebrations of music, dance, and joy.</p>
+                    </div>
+                    
+                    <div class="culture-card">
+                        <img src="assets/marathi-family.jpg" alt="Marathi Family Values">
+                        <h4>PEOPLE & VALUES</h4>
+                        <p>A culture of 11+ crore people built on 'Atithi Devo Bhava,' meaning 'Guest is God.' This foundation values hard work, education, and deep respect for all.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section 
+                data-background-video="assets/mumbai-city-view.mp4" 
+                data-background-video-loop 
+                data-background-video-muted
+                data-background-opacity="0.5">
+            </section>
+            <section data-background-color="#121212">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px;">Maharashtra: India's Tech Engine</h2>
+                <div class="decorative-line" style="margin: 20px auto 30px auto; width: 60%;"></div>
+                <p class="culture-intro-text" style="margin-bottom: 50px;">
+                    The state that doesn't just power India's economy — it codes, builds, and engineers the nation's digital future.
+                </p>
+                
+                <div class="layout-impact-stats">
+                    <div class="stat-block">
+                        <span class="stat-block-number">60%</span>
+                        <div class="stat-block-label">
+                            <span class="material-symbols-outlined">storage</span>
+                            INDIA'S DATA CENTERS
+                        </div>
+                        <p class="stat-block-text">Hosting the core infrastructure that powers Digital India.</p>
+                    </div>
+                    
+                    <div class="stat-block">
+                        <span class="stat-block-number">20%</span>
+                        <div class="stat-block-label">
+                             <span class="material-symbols-outlined">language</span>
+                             INDIA'S IT EXPORTS
+                        </div>
+                        <p class="stat-block-text">Driving the nation's tech economy and global software presence.</p>
+                    </div>
+                    
+                    <div class="stat-block">
+                        <span class="stat-block-number">3000+</span>
+                         <div class="stat-block-label">
+                             <span class="material-symbols-outlined">rocket_launch</span>
+                            STARTUPS (MUMBAI)
+                        </div>
+                        <p class="stat-block-text">The launchpad for innovation and the heart of India's startup ecosystem.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section
+                data-background-video="assets/data-capital-bg.mp4"
+                data-background-video-loop
+                data-background-video-muted
+                data-background-opacity="0.4">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px;">Maharashtra: India's Data Capital</h2>
+                <div class="decorative-line" style="margin: 20px auto 40px auto; width: 60%;"></div>
+                <p class="culture-intro-text">Every byte, every click, every message — most of India's digital life runs through Maharashtra.</p>
+                <div class="layout-culture-grid tech-intro-grid">
+                    <div class="culture-card tech-card">
+                        <div class="tech-card-icon">
+                            <span class="material-symbols-outlined">storage</span>
+                        </div>
+                        <h4>NATION'S DATA HUB</h4>
+                        <p>With over <strong>60% of India's data centers</strong>, Maharashtra is the digital heart that keeps the country online. From Mumbai to Navi Mumbai, massive server farms store and process the data behind India's banks, apps, and businesses.</p>
+                    </div>
+                    <div class="culture-card tech-card">
+                        <div class="tech-card-icon">
+                            <span class="material-symbols-outlined">cloud</span>
+                        </div>
+                        <h4>WHERE YOUR DATA LIVES</h4>
+                        <p>Every time you stream, chat, or pay online — there's a good chance it passes through this state. Your WhatsApp, YouTube, and UPI transactions are secured in world-class facilities spread across Maharashtra.</p>
+                    </div>
+                    <div class="culture-card tech-card">
+                        <div class="tech-card-icon">
+                            <span class="material-symbols-outlined">security</span>
+                        </div>
+                        <h4>TRUSTED BY TECH GIANTS</h4>
+                        <p>Global companies — from <strong>Amazon Web Services and Google Cloud</strong> to <strong>Microsoft and IBM</strong> — run key data operations here. These centers handle millions of secure transactions every second, making Maharashtra the safest vault of India's digital economy.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section data-background-color="#121212">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px; font-size: 2.2em;">Maharashtra: Heart of India's Software</h2>
+                <div class="decorative-line" style="margin: 20px auto 40px auto; width: 60%;"></div>
+                
+                <div class="layout-zigzag">
+                    <div class="zigzag-row">
+                        <div class="zigzag-image">
+                            <img src="assets/software-built.jpg" alt="Software Built in Maharashtra">
+                        </div>
+                        <div class="zigzag-text">
+                            <h4>BUILT IN MAHARASHTRA</h4>
+                            <p>Many popular Indian apps (like Paytm, Zomato) and essential software you use daily are developed right here.</p>
+                        </div>
+                    </div>
+                    <div class="zigzag-row">
+                        <div class="zigzag-text">
+                            <h4>THE HEART OF YOUR DIGITAL LIFE</h4>
+                            <p>Housing <strong>700+ tech companies</strong>, Maharashtra builds the software managing your daily life – from the <strong>banking apps</strong> processing your payments to the systems <strong>securing your personal data.</strong></p>
+                        </div>
+                        <div class="zigzag-image">
+                            <img src="assets/software-heart.jpg" alt="Heart of Digital Life">
+                        </div>
+                    </div>
+                    <div class="zigzag-row">
+                        <div class="zigzag-image">
+                            <img src="assets/software-systems.jpg" alt="Driving Critical Systems">
+                        </div>
+                        <div class="zigzag-text">
+                            <h4>DRIVING CRITICAL SYSTEMS</h4>
+                            <p>Essential services like <strong>banking software</strong> and key <strong>Digital India projects</strong> depend heavily on the software built within Maharashtra.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section
+                data-background-image="assets/smart-city-bg.jpg"
+                data-background-opacity="0.3">
+                
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px; font-size: 2.2em;">Smart Maharashtra: Smarter Tomorrow</h2>
+                <div class="decorative-line" style="margin: 20px auto 30px auto; width: 60%;"></div>
+                <p class="culture-intro-text" style="font-size: 0.52em;">Maharashtra isn't just building cities — it's shaping the future of urban India.</p>
+
+                <div class="layout-smart-split">
+                    <div class="col-smart-text">
+                        <ul class="layout-list-smart">
+                            <li>
+                                <strong style="font-family: 'Oswald', sans-serif; font-size: 0.95em; color: #FFD700;">SMART MOBILITY & INFRA</strong>
+                                <p style="font-family: 'Lato', sans-serif; margin-top: 8px; font-size: 0.88em;">In Pune, people travel smarter with <strong>cashless buses and digital passes</strong>. Thane and Nashik use <strong>smart road sensors</strong> that track traffic and reduce jams — saving time and fuel for millions. Every upgrade makes daily life smoother and more connected.</p>
+                            </li>
+                            <li>
+                                <strong style="font-family: 'Oswald', sans-serif; font-size: 0.95em; color: #FFD700;">GREEN & SUSTAINABLE LIVING</strong>
+                                <p style="font-family: 'Lato', sans-serif; margin-top: 8px; font-size: 0.88em;">Nagpur runs on <strong>electric buses and green energy</strong>, cutting pollution across the city. In Nashik, <strong>smart waste systems</strong> turn garbage into energy and promote cleaner neighbourhoods. From solar lights to eco-friendly homes, Maharashtra is proving that growth can stay green.</p>
+                            </li>
+                             <li>
+                                <strong style="font-family: 'Oswald', sans-serif; font-size: 0.95em; color: #FFD700;">DATA-DRIVEN GOVERNANCE</strong>
+                                <p style="font-family: 'Lato', sans-serif; margin-top: 8px; font-size: 0.88em;">Over <strong>20 cities</strong> now run under the Smart City Mission, using apps and sensors to monitor air, traffic, and public safety in real time. These tools make local governance faster, fairer, and easier for everyone.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-smart-images">
+                         <img src="assets/smart-mobility.jpg" alt="Smart Mobility">
+                         <img src="assets/smart-data.jpg" alt="Data-Driven Governance">
+                    </div>
+                </div>
+            </section>
+
+            <section
+                data-background-image="assets/future-bg.jpg"
+                data-background-opacity="0.4">
+                
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -60px;">The Future is Made in Maharashtra</h2>
+                <div class="decorative-line" style="margin: 20px auto 25px auto; width: 60%;"></div>
+                <p class="culture-intro-text" style="font-size: 0.60em; margin-bottom: 30px;">Maharashtra isn't waiting for the future — it's already building it.</p>
+
+                <div class="layout-vision-cards">
+                    <div class="vision-card">
+                        <span class="material-symbols-outlined">hub</span>
+                        <h4>THE INNOVATION STATE</h4>
+                        <p>Across the state, AI labs, EV factories, and robotics startups are turning bold ideas into real change. From Pune's tech parks to Nagpur's EV corridors and Mumbai's FinTech boom, Maharashtra is shaping the next decade of India's economy.</p>
+                    </div>
+                    
+                    <div class="vision-card">
+                        <span class="material-symbols-outlined">show_chart</span>
+                        <h4>TOWARDS 2030</h4>
+                        <p>By 2030, Maharashtra aims to be India's most advanced state in technology, clean energy, and digital governance. Smart cities, solar highways, and digital schools are already transforming how people live, learn, and work.</p>
+                    </div>
+                    
+                    <div class="vision-card">
+                        <span class="material-symbols-outlined">neurology</span>
+                        <h4>THE ENGINE OF TOMORROW</h4>
+                        <p>With 60% of India's data centers, thousands of startups, and one of the country's most skilled workforces, Maharashtra continues to power India's digital and industrial revolution. Every new innovation here — from automation to electric transport — defines how India will move forward.</p>
+                    </div>
+                </div>
+                
+                <p class="vision-tagline">Where tomorrow is being built today.</p>
+            </section>
+
+            <section data-background-color="#000000"></section>
+
+            <section data-background-color="#121212">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px; font-size: 1.8em;">Bollywood: Maharashtra's Creative Powerhouse</h2>
+                <div class="decorative-line" style="margin: 20px auto 30px auto; width: 60%;"></div>
+
+                <div class="bollywood-image-container">
+                    <img src="assets/bollywood-slide.jpg" alt="Bollywood Film Set">
+                </div>
+
+                <div class="bollywood-content-block">
+                    <p>Beyond driving India's tech future, Maharashtra is also its creative engine. Mumbai, the <strong>movie magic capital</strong>, produces over <strong>1000 films every year</strong> – more than 3 movies daily!</p>
+                    <p><strong>Film City in Goregaon</strong> is a massive hub where entire sets are built, bringing stories to life.</p>
+                    <p>Bollywood is a huge industry, generating <strong>₹18,000 crore annually</strong> and employing over <strong>10 lakh people</strong>, from spot boys to superstars.</p>
+                    <p>Even Bollywood is embracing the future: Film City's upgrade includes <strong>AI studios and virtual reality</strong>, blending technology with storytelling.</p>
+                </div>
+            </section>
+
+            <section data-background-color="#121212">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px;">The Heartbeat of Celebration</h2>
+                <div class="decorative-line" style="margin: 20px auto 40px auto; width: 60%;"></div>
+                <p class="culture-intro-text">A land where joy and tradition unite in spectacular festivals.</p>
+                
+                <div class="layout-culture-grid">
+                    <div class="culture-card">
+                        <img src="assets/ganesh-festival-2.jpg" alt="Ganesh Chaturthi">
+                        <h4>GANESH CHATURTHI</h4>
+                        <p>The state's grand 10-day spectacle. The air fills with music, dance, and devotion in a massive celebration of joy.</p>
+                    </div>
+                    
+                    <div class="culture-card">
+                        <img src="assets/gudi-padwa.jpg" alt="Gudi Padwa">
+                        <h4>GUDI PADWA</h4>
+                        <p>Marking the Maharashtrian New Year, families raise the 'Gudi' (victory flag) to welcome prosperity and new beginnings.</p>
+                    </div>
+                    
+                    <div class="culture-card">
+                        <img src="assets/diwali-rangoli.jpg" alt="Diwali: The Festival of Lights">
+                        <h4>DIWALI: THE FESTIVAL OF LIGHTS</h4>
+                        <p>A dazzling celebration where homes glow with lights, families share sweets, and the night sky sparkles with joy.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section data-background-color="#121212">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px;">A Taste of Maharashtra</h2>
+                <div class="decorative-line" style="margin: 20px auto 40px auto; width: 60%;"></div>
+                <p class="culture-intro-text">From fiery street food to timeless traditional feasts.</p>
+                
+                <div class="layout-culture-grid">
+                    <div class="culture-card">
+                        <img src="assets/vada-pav.jpg" alt="Vada Pav">
+                        <h4>THE KING OF STREET FOOD</h4>
+                        <p>The iconic Vada Pav. A spicy potato fritter in a soft bun, it's the delicious, on-the-go meal that fuels the entire state.</p>
+                    </div>
+                    
+                    <div class="culture-card">
+                        <img src="assets/puran-poli.jpg" alt="Puran Poli">
+                        <h4>THE TRADITIONAL SWEET</h4>
+                        <p>Puran Poli, a beloved sweet flatbread. Stuffed with a delicious mix of jaggery and lentils, it's a festive favorite in every home.</p>
+                    </div>
+                    
+                    <div class="culture-card">
+                        <img src="assets/misal-pav.jpg" alt="Misal Pav">
+                        <h4>THE SPICY POWERHOUSE</h4>
+                        <p>Misal Pav. A fiery and savory curry of sprouts, topped with crunchy farsan. It's a breakfast that truly awakens the senses.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section 
+                data-background-video="assets/tourism-montage.mp4" 
+                data-background-video-loop 
+                data-background-video-muted
+                data-background-opacity="0.3">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -60px;">Maharashtra: A Traveller's Dream</h2>
+                <div class="decorative-line" style="margin: 20px auto 40px auto; width: 60%;"></div>
+                
+                <div class="layout-timeline">
+                    <div class="timeline-card">
+                        <span class="material-symbols-outlined">waves</span>
+                        <h4>THE COASTAL VIBE</h4>
+                        <p>From Marine Drive to the pristine Konkan coast, the state offers 720km of beautiful shoreline.</p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <span class="material-symbols-outlined">landscape</span>
+                        <h4>THE MISTY HILLS</h4>
+                        <p>Escape to lush green hill stations like Lonavala, Mahabaleshwar, and Matheran for a relaxing getaway.</p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <span class="material-symbols-outlined">account_balance</span>
+                        <h4>THE ANCIENT WONDERS</h4>
+                        <p>Step back in time at the world-famous Ajanta & Ellora Caves, a UNESCO World Heritage site.</p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <span class="material-symbols-outlined">temple_hindu</span>
+                        <h4>THE SPIRITUAL HEART</h4>
+                        <p>Find peace at holy sites like the Shirdi Sai Baba Temple and Trimbakeshwar in Nashik.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section data-background-color="#121212">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px; font-size: 2.0em;">The Soul of Maharashtra: Art, Craft & Music</h2>
+                <div class="decorative-line" style="margin: 20px auto 30px auto; width: 60%;"></div>
+                <p class="culture-intro-text" style="margin-bottom: 40px; font-size: 0.55em;">Every colour, every beat, every thread — tells the story of Maharashtra's spirit.</p>
+                
+                <div class="layout-zigzag">
+                    <div class="zigzag-row">
+                        <div class="zigzag-image">
+                            <img src="assets/art-warli.jpg" alt="Warli Art">
+                        </div>
+                        <div class="zigzag-text">
+                            <h4 style="font-size: 1.15em;">TIMELESS WARLI ART</h4>
+                            <p style="font-size: 0.68em;">Born in the tribal villages near Palghar, Warli art is one of India's oldest art forms. With just white paint on mud walls, it captures daily life — farming, dancing, and celebrating — in simple shapes that speak louder than words.</p>
+                        </div>
+                    </div>
+                    <div class="zigzag-row">
+                        <div class="zigzag-text">
+                            <h4 style="font-size: 1.15em;">THE WOVEN GOLD: PAITHANI</h4>
+                            <p style="font-size: 0.68em;">From the town of Paithan comes the legendary Paithani saree, woven with pure silk and gold thread. Each piece takes months to make and shines with peacock and lotus designs — a living symbol of Maharashtrian elegance.</p>
+                        </div>
+                        <div class="zigzag-image">
+                            <img src="assets/craft-paithani.jpg" alt="Paithani Saree">
+                        </div>
+                    </div>
+                    <div class="zigzag-row">
+                        <div class="zigzag-image">
+                            <img src="assets/music-lavani.jpg" alt="Lavani Dance">
+                        </div>
+                        <div class="zigzag-text">
+                            <h4 style="font-size: 1.15em;">THE ENERGY OF LAVANI</h4>
+                            <p style="font-size: 0.68em;">No celebration is complete without Lavani — the dance of rhythm and confidence. Performed with powerful expressions and dholki beats, Lavani brings together music, theatre, and storytelling in the most energetic way possible.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                data-background-video="assets/cultural-montage.mp4"
+                data-background-video-loop
+                data-background-video-muted>
+            </section>
+
+            <section
+                data-background-video="assets/soil_mh.mp4"
+                data-background-video-loop
+                data-background-video-muted
+                data-background-opacity="0.3">
+                <div class="layout-intro-split">
+                    <div class="col-intro-text">
+                        <h2 class="slide-title" style="text-align: left; margin-bottom: 0;">The Land and Its Foundations</h2>
+                        <div class="decorative-line" style="margin-bottom: 30px;"></div>
+                        <p>Maharashtra isn't just one land; it's <strong>three worlds in one</strong>. It stretches from the rugged, fortress-like <strong>Sahyadri mountains</strong> to the sun-drenched <strong>720 km Konkan coastline</strong>.</p>
+                        <p>In between lies the vast, fertile <strong>Deccan Plateau</strong>—the state's core. This powerful geography is the <strong>unseen hero</strong> of Maharashtra's story.</p>
+                        <p>It provides the rich, black soil for an <strong>agricultural powerhouse</strong> and the solid ground that anchors India's <strong>mightiest industries</strong>.</p>
+                        
+                        <div class="intro-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">720 km</span>
+                                <span class="stat-label">Coastline</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">60%</span>
+                                <span class="stat-label">Farm-Dependent</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">3.07 Lakh sq km</span>
+                                <span class="stat-label">Area</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-intro-image">
+                        <img src="assets/geography-foundations.jpg" alt="Geography Foundations" style="aspect-ratio: 3/4; height: 70vh; border-radius: 12px; object-fit: cover; box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3);">
+                    </div>
+                </div>
+            </section>
+
+            <section data-background-color="#121212">
+                
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px; font-size: 2.4em;">The Agricultural Powerhouse</h2>
+                <div class="decorative-line" style="margin: 20px auto 30px auto; width: 60%;"></div>
+                <p class="culture-intro-text" style="font-size: 0.8em; margin-bottom: 35px;">Feeding millions and powering Maharashtra's economy — from farms to global markets.</p>
+
+                <div class="layout-smart-split">
+                    <div class="col-smart-text">
+                        <ul class="layout-list-smart">
+                            <li style="margin-bottom: 25px;">
+                                <strong style="font-family: 'Oswald', sans-serif; font-size: 1.0em; color: #FFD700; letter-spacing: 0.5px;">A LEADING PRODUCER</strong>
+                                <p style="font-family: 'Lato', sans-serif; margin-top: 10px; font-size: 0.85em; line-height: 1.6; opacity: 0.9;">Maharashtra ranks #1 in India for crops like <strong>grapes, onions, pomegranates, and sugarcane</strong>. Farming here isn't small-scale — it's an organised, high-yield system that supports both local needs and exports.</p>
+                            </li>
+                            <li style="margin-bottom: 25px;">
+                                <strong style="font-family: 'Oswald', sans-serif; font-size: 1.0em; color: #FFD700; letter-spacing: 0.5px;">THE FRUIT & WINE BOWL</strong>
+                                <p style="font-family: 'Lato', sans-serif; margin-top: 10px; font-size: 0.85em; line-height: 1.6; opacity: 0.9;">Nashik, known as the Wine Capital of India, produces more than <strong>80% of India's wine</strong>. The state's famous <strong>Nagpur oranges and Alphonso mangoes</strong> are exported to countries across Asia, Europe, and the Middle East.</p>
+                            </li>
+                            <li>
+                                <strong style="font-family: 'Oswald', sans-serif; font-size: 1.0em; color: #FFD700; letter-spacing: 0.5px;">THE COTTON BELT</strong>
+                                <p style="font-family: 'Lato', sans-serif; margin-top: 10px; font-size: 0.85em; line-height: 1.6; opacity: 0.9;">Regions like <strong>Vidarbha and Marathwada</strong> form India's major cotton zone. The fertile black soil here feeds the nation's textile mills and supports thousands of farming families.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-smart-images">
+                         <img src="assets/agri-grapes.jpg" alt="Agriculture Grapes">
+                         <img src="assets/agri-cotton.jpg" alt="Agriculture Cotton">
+                    </div>
+                </div>
+            </section>
+
+            <section
+                data-background-image="assets/factory.jpg"
+                data-background-opacity="0.4">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px;">The Industrial Juggernaut</h2>
+                <div class="decorative-line" style="margin: 20px auto 30px auto; width: 60%;"></div>
+                <p class="culture-intro-text" style="margin-bottom: 50px; font-size: 0.8em;">
+                    From global car factories to the pharmacy of the nation — Maharashtra drives India's industrial power.
+                </p>
+                
+                <div class="layout-impact-stats">
+                    <div class="stat-block">
+                        <span class="stat-block-number">#1</span>
+                        <div class="stat-block-label">
+                            <span class="material-symbols-outlined">directions_car</span>
+                            AUTOMOBILE HUB
+                        </div>
+                        <p class="stat-block-text" style="font-size: 0.75em; line-height: 1.4;">Known as the Detroit of India, the Pune–Chakan belt is home to major manufacturers like Tata Motors, Volkswagen, Mercedes-Benz, and Bajaj Auto. It produces lakhs of vehicles every year for India and the world.</p>
+                    </div>
+                    
+                    <div class="stat-block">
+                        <span class="stat-block-number">~70%</span>
+                        <div class="stat-block-label">
+                             <span class="material-symbols-outlined">medication</span>
+                             PHARMACY OF INDIA
+                        </div>
+                        <p class="stat-block-text" style="font-size: 0.75em; line-height: 1.4;">A huge part of India's medicines and vaccines come from Maharashtra's pharma zones in Pune, Nashik, and Aurangabad. The state played a key role in supplying vaccines during the COVID-19 pandemic.</p>
+                    </div>
+                    
+                    <div class="stat-block">
+                        <span class="stat-block-number">25%</span>
+                         <div class="stat-block-label">
+                             <span class="material-symbols-outlined">factory</span>
+                            INDIA'S INDUSTRIAL OUTPUT
+                        </div>
+                        <p class="stat-block-text" style="font-size: 0.75em; line-height: 1.4;">Maharashtra alone contributes about one-fourth of India's total manufacturing output, covering everything from chemicals and electronics to textiles and machinery.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section data-background-color="#121212">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px; font-size: 1.9em;">Connecting Maharashtra: The Arteries of Growth</h2>
+                <div class="decorative-line" style="margin: 20px auto 40px auto; width: 60%;"></div>
+                <p class="culture-intro-text" style="font-size: 0.9em;">The world-class network that keeps Maharashtra — and India — moving forward.</p>
+                
+                <div class="layout-zigzag">
+                    <div class="zigzag-row">
+                        <div class="zigzag-image">
+                            <img src="assets/infra-port.jpg" alt="JNPT Port">
+                        </div>
+                        <div class="zigzag-text">
+                            <h4 style="font-size: 0.85em;">THE GATEWAY TO INDIA</h4>
+                            <p style="font-size: 0.75em; line-height: 1.4;">Maharashtra's coastline is home to <strong>JNPT (Jawaharlal Nehru Port)</strong> — India's largest and busiest container port. It handles nearly <strong>50% of the country's container cargo</strong>, linking Indian trade to markets across Asia, Europe, and Africa.</p>
+                        </div>
+                    </div>
+                    <div class="zigzag-row">
+                        <div class="zigzag-text">
+                            <h4 style="font-size: 0.85em;">THE EXPRESSWAY NETWORK</h4>
+                            <p style="font-size: 0.75em; line-height: 1.4;">The <strong>Mumbai–Pune Expressway</strong>, India's first, set the benchmark for modern highways. Now the <strong>Samruddhi Mahamarg</strong>, a 701-km expressway between Mumbai and Nagpur, is cutting travel time from 16 hours to just 8 — boosting trade and tourism across the state.</p>
+                        </div>
+                        <div class="zigzag-image">
+                            <img src="assets/infra-expressway.jpg" alt="Expressway Network">
+                        </div>
+                    </div>
+                    <div class="zigzag-row">
+                        <div class="zigzag-image">
+                            <img src="assets/infra-metro.jpg" alt="Metro Rail">
+                        </div>
+                        <div class="zigzag-text">
+                            <h4 style="font-size: 0.85em;">MODERN URBAN TRANSIT</h4>
+                            <p style="font-size: 0.75em; line-height: 1.4;">Cities like Mumbai, Pune, and Nagpur are building massive <strong>Metro Rail networks</strong> to handle millions of passengers every day. Nagpur became India's first <strong>fully solar-powered metro</strong>, showing how Maharashtra combines speed with sustainability.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-background-color="#121212">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px; font-size: 2.2em;">Powering the Juggernaut</h2>
+                <div class="decorative-line" style="margin: 20px auto 30px auto; width: 60%;"></div>
+                <p class="culture-intro-text">The energy and resources that keep Maharashtra growing every single day.</p>
+
+                <div class="layout-smart-split">
+                    <div class="col-smart-text">
+                        <ul class="layout-list-smart">
+                            <li style="margin-bottom: 25px;">
+                                <strong style="font-family: 'Oswald', sans-serif; font-size: 1.2em; color: #FFD700; letter-spacing: 0.5px;">PIONEERING NUCLEAR ENERGY</strong>
+                                <p style="font-family: 'Lato', sans-serif; margin-top: 12px; font-size: 0.90em; line-height: 1.85; opacity: 0.9;">Maharashtra has India's first nuclear power plant — the <strong>Tarapur Atomic Power Station</strong>, set up in <strong>1969</strong>. It still supplies electricity to many states and plays a key role in India's nuclear power network.</p>
+                            </li>
+                            <li style="margin-bottom: 25px;">
+                                <strong style="font-family: 'Oswald', sans-serif; font-size: 1.2em; color: #FFD700; letter-spacing: 0.5px;">THE MINERAL WEALTH</strong>
+                                <p style="font-family: 'Lato', sans-serif; margin-top: 12px; font-size: 0.90em; line-height: 1.85; opacity: 0.9;">The Vidarbha region has rich reserves of <strong>coal, manganese, and iron ore</strong>. These minerals support Maharashtra's steel, cement, and power industries, making it one of India's top industrial states.</p>
+                            </li>
+                            <li>
+                                <strong style="font-family: 'Oswald', sans-serif; font-size: 1.2em; color: #FFD700; letter-spacing: 0.5px;">THE RENEWABLE FUTURE</strong>
+                                <p style="font-family: 'Lato', sans-serif; margin-top: 12px; font-size: 0.90em; line-height: 1.85; opacity: 0.9;">The state is investing heavily in solar and wind energy projects. Large solar parks in <strong>Dhule</strong> and wind farms in <strong>Satara and Sangli</strong> are helping Maharashtra move towards clean, green power.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-smart-images">
+                         <img src="assets/energy-tarapur.jpg" alt="Tarapur Nuclear Power">
+                         <img src="assets/energy-solar.jpg" alt="Solar Energy">
+                    </div>
+                </div>
+            </section>
+
+            <section data-background-color="#000000"></section>
+
+            <section data-background-color="#121212">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px; font-size: 2.0em;">Maharashtra's Firsts: Where India Began</h2>
+                <div class="decorative-line" style="margin: 20px auto 40px auto; width: 60%;"></div>
+                <p class="culture-intro-text">A land that didn't just follow history—it started it.</p>
+                
+                <div class="layout-timeline">
+                    <div class="timeline-card">
+                        <span class="material-symbols-outlined">train</span>
+                        <h4>INDIA'S FIRST TRAIN (1853)</h4>
+                        <p>India's entire railway journey began with the first passenger train from Mumbai to Thane.</p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <span class="material-symbols-outlined">account_balance</span>
+                        <h4>INDIA'S FIRST BANK (1840)</h4>
+                        <p>The Bank of Bombay was founded here, laying the groundwork for India's entire financial system.</p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <span class="material-symbols-outlined">movie</span>
+                        <h4>INDIA'S FIRST FILM (1913)</h4>
+                        <p>Dadasaheb Phalke produced 'Raja Harishchandra' in Maharashtra, giving birth to Indian cinema.</p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <span class="material-symbols-outlined">school</span>
+                        <h4>ASIA'S FIRST ENGG. COLLEGE</h4>
+                        <p>The College of Engineering, Pune (COEP) was founded in 1854, pioneering technical education in Asia.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section data-background-color="#121212">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px;">The Land of Legends</h2>
+                <div class="decorative-line" style="margin: 20px auto 30px auto; width: 60%;"></div>
+                <p class="culture-intro-text">Giants who shaped India's society, sports, and industry — all born from Maharashtra's soil. Their work didn't just inspire people; it built the foundation of modern India.</p>
+                
+                <div class="layout-culture-grid">
+                    <div class="culture-card">
+                        <img src="assets/icon-ambedkar.jpg" alt="Dr. B.R. Ambedkar">
+                        <h4>DR. B.R. AMBEDKAR</h4>
+                        <p style="font-size: 0.62em;">The chief architect of the Indian Constitution — a reformer, economist, and the voice of equality. Born in a humble family in Mhow, he rose to become one of India's greatest minds. His vision of justice, education, and human rights continues to guide the nation's progress.</p>
+                    </div>
+                    
+                    <div class="culture-card">
+                        <img src="assets/icon-sachin.jpg" alt="Sachin Tendulkar">
+                        <h4>SACHIN TENDULKAR</h4>
+                        <p style="font-size: 0.62em;">The God of Cricket. From the lanes of Mumbai to the biggest stadiums on Earth, he carried the dreams of a billion Indians on his shoulders. His dedication, discipline, and humility turned him into more than a sportsman — he became a national emotion.</p>
+                    </div>
+                    
+                    <div class="culture-card">
+                        <img src="assets/icon-tata.jpg" alt="J.R.D. Tata">
+                        <h4>J.R.D. TATA</h4>
+                        <p style="font-size: 0.62em;">The father of Indian aviation and one of the country's most respected industrialists. He founded Air India, expanded the Tata Group, and introduced a culture of innovation and integrity in Indian business. Under his leadership, Maharashtra became a hub of enterprise, ambition, and excellence.</p>
+                    </div>
+                </div>
+                
+                <p class="vision-tagline" style="margin-top: 40px;">Legends aren't born everywhere — they're made in Maharashtra.</p>
+            </section>
+
+            <section data-background-color="#121212">
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px;">The Knowledge Capital: Shaping Minds</h2>
+                <div class="decorative-line" style="margin: 20px auto 30px auto; width: 60%;"></div>
+                <p class="culture-intro-text">Maharashtra has always been the land of learning — where education meets innovation.</p>
+
+                <div class="layout-smart-split">
+                    <div class="col-smart-text">
+                        <ul class="layout-list-smart">
+                            <li>
+                                <strong style="font-family: 'Oswald', sans-serif; font-size: 0.95em; color: #FFD700;">THE ROOTS OF EXCELLENCE</strong>
+                                <p style="font-family: 'Lato', sans-serif; margin-top: 8px; font-size: 0.92em;">The state is home to Asia's oldest engineering college, <strong>COEP Pune</strong>, founded in <strong>1854</strong>, and some of India's earliest universities in Mumbai and Nagpur. For over a century, students from all over India have come here to study, grow, and build their future.</p>
+                            </li>
+                            <li>
+                                <strong style="font-family: 'Oswald', sans-serif; font-size: 0.95em; color: #FFD700;">THE MODERN MINDSET</strong>
+                                <p style="font-family: 'Lato', sans-serif; margin-top: 8px; font-size: 0.92em;">Today, Maharashtra leads with top institutes like <strong>IIT Bombay, TIFR, Symbiosis, and SPPU Pune</strong>, shaping thinkers, engineers, and leaders for a global India. Its cities are known for their education-driven culture, where learning is not just about degrees — it's about ideas and action.</p>
+                            </li>
+                            <li>
+                                <strong style="font-family: 'Oswald', sans-serif; font-size: 0.95em; color: #FFD700;">THE FUTURE OF KNOWLEDGE</strong>
+                                <p style="font-family: 'Lato', sans-serif; margin-top: 8px; font-size: 0.92em;">By <strong>2030</strong>, Maharashtra aims to be India's biggest education and research hub, blending traditional values with digital learning and smart campuses.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-smart-images">
+                         <img src="assets/edu-pune.jpg" alt="Education in Pune">
+                         <img src="assets/edu-arch.jpg" alt="Education ARCH">
+                    </div>
+                </div>
+            </section>
+
+            <section
+                data-background-image="assets/future-bg.jpg"
+                data-background-opacity="0.4">
+                
+                <h2 class="slide-title" style="text-align: center; margin-bottom: 0; margin-top: -50px; font-size: 2.2em;">The Spirit of Maharashtra: Ever Forward</h2>
+                <div class="decorative-line" style="margin: 20px auto 30px auto; width: 60%;"></div>
+                <p class="culture-intro-text">A land that honours its past and builds the nation's future.</p>
+
+                <div class="layout-smart-split">
+                    <div class="col-smart-text">
+                        <ul class="layout-list-smart">
+                            <li>
+                                <strong>THE DRIVE TO LEAD</strong>
+                                <p style="font-size: 0.95em;">It was in Maharashtra that India's first train ran from Mumbai to Thane in <strong>1853</strong>, and where the <strong>Bombay Stock Exchange (BSE)</strong> began trading in <strong>1875</strong>, still driving India's financial heartbeat today.</p>
+                            </li>
+                            <li>
+                                <strong>THE SPIRIT OF INNOVATION</strong>
+                                <p style="font-size: 0.95em;">Maharashtra launched Indian cinema with <strong>Dadasaheb Phalke's first film studio</strong> in Nashik in <strong>1913</strong>, and India's first cotton mill in Mumbai, laying the foundation for the country's industrial rise.</p>
+                            </li>
+                            <li>
+                                <strong>THE VISION FOR TOMORROW</strong>
+                                <p style="font-size: 0.95em;">By <strong>2030</strong>, Maharashtra is set to become India's most developed state in technology, clean energy and digital innovation, actively building a smarter, stronger nation.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-smart-images" style="padding-top: 30px;">
+                         <img src="assets/train.jpg" alt="India's First Train - Mumbai to Thane" style="height: 65vh; width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                
+                <p class="vision-tagline" style="margin-top: 30px;">Jai Maharashtra — Forever Forward.</p>
+            </section>
+
+            <section 
+                data-background-video="assets/maharashtra-bg.mp4" 
+                data-background-video-loop 
+                data-background-video-muted
+                data-background-opacity="0.3"
+                style="display: flex !important; flex-direction: column !important; justify-content: flex-start !important; align-items: center !important; height: 100vh !important; padding-top: 30vh !important;">
+                <h1 class="r-fit-text title-text">Majesty of Maharashtra</h1>
+                <div class="decorative-line"></div>
+                <p class="author-text">Thank You</p>
+                <p class="author-text" style="margin-top: 25px; font-size: 0.9em;">Aditya, Ammar, Harsh, Kabeer & Rounak</p>
+            </section>
+
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            width: 1920,
+            height: 1080,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 2.0
+        });
+    </script>
+    <script src="optimizer.js"></script>
+</body>
+</html>
